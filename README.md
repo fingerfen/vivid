@@ -41,6 +41,44 @@ colors.
 
 [![Build Status](https://travis-ci.org/sharkdp/vivid.svg?branch=master)](https://travis-ci.org/sharkdp/vivid)
 
+### On Mac OS
+
+Install Rust and use `cargo install vivid` to install vivid
+
+Then run `export PATH=$PATH:/Users/duongn/.cargo/bin` to add a directory to your PATHS so you could call vivid by typing `vivid`
+
+Run `mkdir ~/.config ~/.config/vivid` to add directories to your $HOME path
+
+Find the `filetypes.yml` and `themes` folder in this GITHUB directory. 
+
+Copy `filetypes.yml` and the `themes` folder to ~/.config/vivid
+
+Test if the program works by doing `vivid -m 8-bit generate snazzy`
+
+If it outputs random codes then it works
+
+Run `brew install coreutils`
+
+Edit the `.bash_profile` file by typing in `vim ~/.bash_profile` (you should have Vim by default in Mac terminal)
+
+Press the arrow keys to go to the bottom, press `i` to start edditing, add in the lines
+
+```
+export LS_COLORS="$(vivid generate molokai)"
+
+alias ls="gls --color"
+```
+
+Press `esc` button on your keyboard to exit editing mode
+
+Type in `:wq` to save and quit the file
+
+Finally, in the command line, type `source ~/.bash_profile`
+
+Now if you press `ls`, your directory should have the colors you want. 
+
+**NOTE** the colors displayed in your terminal is 8bit, thus it won't be as vibrant and varying as shown in the figure above.
+
 ### On Debian-based systems
 
 Download one of the Debian packages from the [release page](https://github.com/sharkdp/vivid/releases)
